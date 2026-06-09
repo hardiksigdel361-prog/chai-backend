@@ -2,8 +2,9 @@
   "name": "chai-backend",
   "version": "1.0.0",
   "description": "a backend at chai aur code channel - youtube",
+  "types": "module",
   "keywords": [
-    "javaascript",
+    "javascript",
     "backend",
     "chai"
   ],
@@ -12,6 +13,11 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^5.2.1",
+    "mongoose": "^7.3.1"
   }
 }
