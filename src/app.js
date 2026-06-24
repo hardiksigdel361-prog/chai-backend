@@ -1,7 +1,11 @@
 import express from "express"
 import cors from "cors" 
 import cookieParser from "cookie-parser"
+import path from "path";
+import dotenv from "dotenv";
 
+
+dotenv.config();
 const app = express()
 
 app.use(cors({
@@ -9,9 +13,9 @@ app.use(cors({
     credentials: true
 }))
 
-app.use(express.json({limit: "16kb"}))
-app.use(express.urlencoded({extended: true, limit: "16kb"}))
-app.use(express.static)
+app.use(express.json({limit: "50MB"}))
+app.use(express.urlencoded({extended: true, limit: "50MB"}))
+app.use(express.static(path.join(process.cwd(), "public")));
 app.use(cookieParser())
 
 
